@@ -1,4 +1,4 @@
-// match 
+// match
 import React, { useEffect } from "react";
 import "./Footer.css";
 import PlayCircleOutlineIcon from "@material-ui/icons/PlayCircleOutline";
@@ -77,6 +77,7 @@ function Footer({ spotify }) {
 
   return (
     <div className="footer">
+      {console.log(item)}
       <div className="footer_left">
         <img
           className="footer_albumlogo"
@@ -90,7 +91,7 @@ function Footer({ spotify }) {
           </div>
         ) : (
           <div className="footer__songInfo">
-            <h4>No song is playing</h4>
+            <h4>Your current song from spotify</h4>
             <p>...</p>
           </div>
         )}
@@ -111,7 +112,7 @@ function Footer({ spotify }) {
             className="footer__icon"
           />
         )}
-        <SkipNextIcon onClick={skipPrevious}  className="footer_icon" />
+        <SkipNextIcon onClick={skipPrevious} className="footer_icon" />
         <RepeatIcon className="footer_green" />
       </div>
       <div className="footer_right">

@@ -46,7 +46,7 @@ function App() {
         });
       });
 
-      spotify.getPlaylist("37i9dQZF1DX6mvEU1S6INL").then((response) => {
+      spotify.getPlaylist("37i9dQZF1EuDOgggayKIWm").then((response) => {
         dispatch({
           type: "SET_DISCOVER_WEEKLY",
           discover_weekly: response,
@@ -68,7 +68,7 @@ function App() {
   // console.log(":☺", token);
   // console.log(":☺", playlists);
   // console.log(":☺", top_artists);
-
+  // console.log(spotify )
 
   return (
     <div className="app">

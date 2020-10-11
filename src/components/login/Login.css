@@ -31,9 +31,10 @@
   text-align: center;
   cursor: default;
   border-radius: 50px;
-  background: linear-gradient(145deg, #2c2c2c, #252525);
-  box-shadow: 20px 20px 60px #232323, -20px -20px 60px #2f2f2f;
-  padding: 20px;
+  border-radius: 50px;
+  background: #212121;
+  box-shadow: inset 20px 20px 60px #1c1c1c, inset -20px -20px 60px #262626;
+  padding: 30px;
 }
 
 .login_cred {
@@ -67,7 +68,6 @@
   text-align: center;
   cursor: default;
   text-decoration: none;
-  
 }
 
 .login_cred > h4 {

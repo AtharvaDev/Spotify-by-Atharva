@@ -19,7 +19,7 @@ function Login() {
       <div className="login__info">
         <h2>Important note by Developer</h2>
         <h4>
-          If you dont have a Spotify email-id and password you can use this
+          If you dont have a Spotify email-id and password you can use this on the next page
         </h4>
         <br />
         <div className="login_cred">
@@ -61,7 +61,7 @@ function Login() {
         <br />
         <h5>Or else create a free new Spotify Account</h5>
       </div>
-      <a className="login_button" href={loginUrl} >
+      <a className="login_button" target="_blank" href={loginUrl} >
       {/* target="_blank" */}
         Login with Spotify 
       </a>

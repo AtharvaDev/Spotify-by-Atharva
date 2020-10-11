@@ -5,6 +5,7 @@ export const initialState = {
   item: null,
   top_artists: null,
   discover_weekly: null,
+  curr_playlist: [],
   // token: null,
 
   // Remove after finishing development...
@@ -65,6 +66,13 @@ const reducer = (state, action) => {
       return {
         ...state,
         top_artists: action.top_artists,
+      };
+
+    case "PLAY_PLAYLIST":
+      return {
+        ...state,
+        curr_playlist: action.curr_playlist,
+        playing: true
       };
 
     default:

@@ -33,7 +33,8 @@ function Siderbar() {
       {console.log("my list", playlists)}
 
       {playlists?.items?.map((playlist) => (
-        <SidebarOption title={playlist.name} />
+        
+        <SidebarOption id={playlist} title={playlist.name} />
       ))}
       
       {noplaylist }
