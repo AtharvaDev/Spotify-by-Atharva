@@ -16,7 +16,7 @@ function Player({ spotify }) {
       </div>
 
       {/* footer  */}
-      <Footer />
+      <Footer spotify={spotify} />
     </div>
   );
 }

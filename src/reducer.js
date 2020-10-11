@@ -3,6 +3,8 @@ export const initialState = {
   playlists: [],
   playing: false,
   item: null,
+  top_artists: null,
+  discover_weekly: null,
   // token: null,
 
   // Remove after finishing development...
@@ -15,12 +17,24 @@ export const initialState = {
 // 3. action -> type, [payload] .Now here Action has two things type and [payload] here square brackets means that payload is dynamic we can call it anywhere
 // 4. now the type means case eg. 'SET_USER' and payload is user
 const reducer = (state, action) => {
-  console.log(action);
+  // console.log(action);
   switch (action.type) {
     case "SET_USER":
       return {
         ...state,
         user: action.user,
+      };
+
+    case "SET_PLAYING":
+      return {
+        ...state,
+        playing: action.playing,
+      };
+
+    case "SET_SPOTIFY":
+      return {
+        ...state,
+        spotify: action.spotify,
       };
 
     case "SET_TOKEN":
@@ -39,6 +53,18 @@ const reducer = (state, action) => {
       return {
         ...state,
         discover_weekly: action.discover_weekly,
+      };
+
+    case "SET_ITEM":
+      return {
+        ...state,
+        item: action.item,
+      };
+
+    case "SET_TOP_ARTISTS":
+      return {
+        ...state,
+        top_artists: action.top_artists,
       };
 
     default:

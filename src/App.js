@@ -6,7 +6,6 @@ import Player from "./components/player/Player";
 import { useDataLayerValue } from "./DataLayer";
 import { getTokenFromUrl } from "./spotify";
 
-
 // this is a super object which is constanly responsible for any sort of interaction between our react app and spotify
 const spotify = new SpotifyWebApi();
 
@@ -47,23 +46,31 @@ function App() {
         });
       });
 
-      spotify.getPlaylist('37i9dQZEVXbMDoHDwVN2tF').then(response => {
+      spotify.getPlaylist("37i9dQZF1DX6mvEU1S6INL").then((response) => {
         dispatch({
           type: "SET_DISCOVER_WEEKLY",
-          discover_weekly: response
-        })
-      })
+          discover_weekly: response,
+        });
+      });
+
+      spotify.getMyTopArtists().then((response) => {
+        dispatch({
+          type: "SET_TOP_ARTISTS",
+          top_artists: response,
+        });
+      });
     }
 
     // console.log("I have a token", token);
   }, []); // this empty brackets tells us to run once the component loads
 
-  console.log(":☺", user);
-  console.log(":☺", token);
-  console.log(":☺", playlists);
+  // console.log(":☺", user);
+  // console.log(":☺", token);
+  // console.log(":☺", playlists);
+  // console.log(":☺", top_artists);
+
 
   return (
-
     <div className="app">
       {/* this is ternary operator🔽 */}
       {token ? <Player spotify={spotify} /> : <Login />}

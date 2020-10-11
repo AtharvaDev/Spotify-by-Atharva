@@ -9,15 +9,6 @@ function Login() {
   const [value, setvalue] = useState("workwith@atharva.ml");
   const [pass, setpass] = useState("atharva.ml");
   const [copied, setcopied] = useState("flase");
-  const [open, setOpen] = React.useState(false);
-
-  const handleTooltipClose = () => {
-    setOpen(false);
-  };
-
-  const handleTooltipOpen = () => {
-    setOpen(true);
-  };
 
   return (
     <div className="login">
@@ -39,16 +30,16 @@ function Login() {
             onChange={({ target: { value } }) => setcopied("false")}
           />
           &nbsp;&nbsp;&nbsp;
-            <CopyToClipboard onCopy={() => setcopied("true")} text={value}>
-             
-                <Button onClick={handleTooltipOpen} className="login__button">
-                  Copy
-                  <FileCopyIcon />
-                </Button>
+          <CopyToClipboard onCopy={() => setcopied("true")} text={value}>
+            <Tooltip title="Copy Email" placement="right" arrow>
+              <Button className="login__button">
+                Copy
+                <FileCopyIcon />
+              </Button>
+            </Tooltip>
 
-              {/* <button>Copy to clipboard with button</button> */}
-            </CopyToClipboard>
-          
+            {/* <button>Copy to clipboard with button</button> */}
+          </CopyToClipboard>
         </div>
         <div className="login_cred">
           <h4>Password: </h4>&nbsp;&nbsp;&nbsp;
@@ -58,7 +49,7 @@ function Login() {
           />
           &nbsp;&nbsp;&nbsp;
           <CopyToClipboard onCopy={() => setcopied("true")} text={pass}>
-            <Tooltip title="Add" placement="right">
+            <Tooltip title="Copy Password" placement="right" arrow>
               <Button className="login__button">
                 Copy
                 <FileCopyIcon />
@@ -70,8 +61,9 @@ function Login() {
         <br />
         <h5>Or else create a free new Spotify Account</h5>
       </div>
-      <a href={loginUrl} target="_blank">
-        Login with Spotify
+      <a className="login_button" href={loginUrl} >
+      {/* target="_blank" */}
+        Login with Spotify 
       </a>
     </div>
   );

@@ -21,6 +21,11 @@
   text-decoration: none;
   cursor: pointer;
 }
+
+.login_button:hover {
+  background-color: green;
+}
+
 .login__info {
   color: white;
   text-align: center;
@@ -60,6 +65,9 @@
   margin: 2px;
   padding-left: 10px;
   text-align: center;
+  cursor: default;
+  text-decoration: none;
+  
 }
 
 .login_cred > h4 {
